@@ -1,23 +1,19 @@
 # vendor-logos
 
-Logo image assets used in RHR dashboards and documentation.
+Image assets referenced by external tools.
 
 ## ⚠️ This repository is intentionally public — do not make it private
 
-Looker Studio dashboards hotlink these images by raw URL, and Looker Studio cannot authenticate to a private repository. Changing this repo's visibility to private **breaks every embedded image at once**. Do not change visibility without first migrating all dashboard image references.
+These images are embedded by raw URL from external tools that cannot authenticate to a private repository. Changing this repository's visibility **breaks those references at once**. Do not change visibility without first migrating every external reference.
 
 ## Usage
-
-Reference any image directly:
 
 ```
 https://raw.githubusercontent.com/rhrinternational/vendor-logos/main/<filename>
 ```
 
-URL-encode spaces in filenames as `%20` (e.g. `Looker%20Studio.png`).
+URL-encode spaces in filenames as `%20`.
 
 ## Contributing
 
-Because images here are hotlinked by filename, **renaming or deleting a file breaks live dashboards** — treat existing filenames as a published API. Add new files freely; never remove or rename without checking dashboard references first. Changes go through the standard org workflow: branch → PR → squash merge (`main` is protected).
-
-> Note: this repo contains both `Tableau.png` and `tableau.png` — filenames differing only by case collide on macOS/Windows checkouts (git warns at clone). Avoid adding case-variant duplicates.
+Filenames are a published API — never rename or delete a file without checking external references first. Avoid adding filenames that differ only by case (e.g. `Tableau.png` / `tableau.png` collide on case-insensitive filesystems).
